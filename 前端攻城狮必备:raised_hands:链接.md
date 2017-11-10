@@ -1,0 +1,118 @@
+## 11月新连接:smile:
+http://www.cnblogs.com/tomxu/archive/2011/12/15/2288411.html  `深入理解JavaScript系列文章--汤姆大叔`<br> 
+http://www.cnblogs.com/JeffreyZhao/   `老赵博客`<br>
+http://www.laruence.com/2009/05/28/863.html  `Javascript作用域原理--鸟哥`<br>
+https://segmentfault.com/a/1190000011082342  `js中的执行栈、执行环境(上下文)、作用域、作用域链、活动对象、变量对象的概念总结`<br>
+https://segmentfault.com/a/1190000002792608  js作用域链<br>
+https://segmentfault.com/a/1190000011612140  js中的闭包<br> 
+https://segmentfault.com/a/1190000000481884  你真的了解 console 吗<br>
+https://segmentfault.com/a/1190000005791890  移动端点击事件全攻略<br>
+https://segmentfault.com/a/1190000011868916  chrome开发者工具指南<br>
+http://www.cnblogs.com/qq9694526/p/5653728.html     js事件冒泡和事件捕获<br>
+https://www.webpagefx.com/tools/emoji-cheat-sheet/  github的各种emoji表情<br>
+https://www.zhihu.com/question/20070065      怎样使用github<br>
+http://youngxhui.github.io/2016/05/03/GitHub-for-Windows%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B(%E4%B8%80)/  GitHub for Windows使用教程<br>
+http://blog.csdn.net/kaitiren/article/details/38513715  `GitHub上README.md教程`<br>
+http://www.jianshu.com/p/00f855886b33   Github中添加README<br>
+```html
+<div>hahhhha</div> 
+```
+***
+## 10月新连接:bowtie:
+http://www.qdfuns.com/  前端网<br>
+http://www.daqianduan.com/6281.html  手机移动端WEB资源整合<br><br>
+https://www.zhihu.com/question/19723850  知乎回答<br>
+http://www.open-open.com/lib/view/open1449325854077.html  H5移动端页面常见兼容问题及解决方案<br>
+https://segmentfault.com/a/1190000008378497  Vue.js资源分享<br>
+***
+## 9月新连接:heart_eyes:
+https://juejin.im/post/59cb05556fb9a00a4a4cdb5c  Vue上线项目集合<br>
+https://github.com/ruanyf/jstraining  Js全栈培训-阮一峰<br>
+http://jingyan.baidu.com/article/1709ad809639934635c4f062.html  搭建PHP本地运行环境之PHPStudy<br>
+https://github.com/calabash519/interview-questions  你不能错过的前端面试题<br>
+http://jerryzou.com/posts/vscode-debug-guide/  Visual Studio Code 前端调试不完全指南<br>
+http://www.jianshu.com/p/efa870f8d633 <br>
+***
+## 8月新连接:stuck_out_tongue:
+https://plainjs.com/javascript/plugins/navigation/ JS案例<br>
+http://techbrood.com/  H5动画/svg特效等<br>
+http://ife.baidu.com/course/all  百度前端技术学院<br>
+***
+## 5月新连接:wink:
+https://github.com/gomeplusFED/blog/blob/master/2016-04/do-you-really-understand-how-to-write-a-countdown-by-javascript.md你真的知道怎么用javascript来写一个倒计时吗 ?<br>
+https://github.com/luoye-fe/countdown  CountDown 计时器<br>
+https://www.h5jun.com/post/wait-promise.html Promise与定时器<br>
+http://taobaofed.org/blog/2016/05/03/promise-anti-patterns/ Promise 返模式 <br><br>
+https://github.com/lishengzxc/bblog/issues/5  说说 Javascript 的 Date<br>
+http://www.jianshu.com/p/8b428e1d1564 【简明教程】JSON <br>
+http://www.w3cplus.com/blog/tags/570.html JS算法练习<br>
+https://github.com/creeperyang/blog/issues/2 JavaScript问题集锦<br>
+http://tools.jb51.net/table/javascript_event  JS事件功能简介<br>
+http://www.cnblogs.com/linjiqin/p/3429919.html   JS表单验证封装代码<br>
+http://imweb.io/topic/568958714c44bcc56092e409 从零开始学web安全<br>
+https://github.com/sunweiling/zhihu-canvas/blob/master/main.js canvas仿知乎登录动画<br>
+http://www.cnblogs.com/leejersey/p/4714613.html  canvas移动端图片loading实例<br>
+***
+## 看书成长:relieved:
+https://github.com/phodal/growth-in-action 如何长时间高效学习？<br>
+https://www.zhihu.com/question/28358499/answer/43002343 <br>
+http://www.cnblogs.com/ys-ys/p/5132013.html JavaScript 总结几个提高性能知识点<br>
+***
+## 学习/教程/资料 网站:grinning:
+http://www.liaoxuefeng.com/    廖雪峰的官网<br>
+http://javascript.ruanyifeng.com/ 阮一峰JS<br>
+http://edu.51cto.com/    51cto <br>
+http://hao.xueui.cn/    学ui网<br>
+http://www.runoob.com/ 菜鸟教程<br>
+http://www.zhangxinxu.com/wordpress/category/js/ 张鑫旭<br>
+http://www.ycku.com/course/ 瓢城web俱乐部<br>
+http://www.imooc.com/  慕课网<br>
+http://study.163.com/ 网易云课堂<br>
+http://www.jikexueyuan.com/ 极客学院<br>     
+https://segmentfault.com/a/1190000002804472 github上值得关注的前端项目--SF<br>
+https://github.com/windiest/Front-end-tutorial  最全的资源教程-前端涉及的所有知识体系<br>
+http://www.layui.com/ Layui前端框架--弹出、按钮、日期、分页、表单超实用！<br>
+https://zhuanlan.zhihu.com/p/25334672 前端知识总结<br>
+http://www.mycodes.net/  源码之家<br>
+http://www.cnblogs.com/dolphinX/p/3524977.html JavaScript表达式yu运算符<br>
+http://www.html-js.com/  前端乱炖<br>
+http://www.cnblogs.com/xcsn/archive/2013/04/22/3035240.html  JS倒计时/手机验证码发送<br>
+http://sc.chinaz.com/ 站长素材<br>
+http://expo.bootcss.com/page/2/ Bootstrap优站<br>
+***
+## 工具:yum:
+http://daneden.github.io/animate.css/   animate.css动效<br>
+http://www.bitbug.net/   在线制作网页小图标<br>
+https://tinypng.com/    PNG 图片压缩 ！！<br>
+http://tool.lu/    在线工具包括JS/CSS/HTML 压缩<br>
+http://bjq.wxrob.com/ewm.html   二维码生成器 <br>
+http://mobilehtml5.org/ 兼容性速查<br>
+http://www.qiuziti.com/  在线字体识别<br>
+***
+## vue文档:sunglasses:
+https://github.com/MeCKodo/vue-tutorial  vue构建单页应用最佳实战<br>
+http://mp.weixin.qq.com/mp/homepage?__biz=MzI3NTE2NjYxNw==&hid=10&sn=276424f114031df4cfa50492102b1b93#wechat_redirect&location=35  Vue<br> 
+***
+## 基础:alien:
+http://www.kancloud.cn/zmwtp/vue2/148822  vue源码学习<br>
+https://github.com/andylei18/vue-shopping 基于Vue模仿蘑菇街的单页应用<br><br>
+https://segmentfault.com/a/1190000005268225   vue构建单页应用最佳实战<br>
+https://cn.vuejs.org/v2/guide/  Vue.js 教程<br>
+***
+## 网站欣赏:innocent:
+http://tgideas.qq.com/     腾讯游戏设计团队 TGideas<br>
+http://sale.jd.com/act/SUVT42MxDzokKXEy.html?cpdad=1DLSUE  JD智能生活<br>
+http://www.cocoachina.com/webapp/20150430/11737.html 玩转HTML5移动页面（动效篇）<br>
+http://www.newcger.com/aemoban/2352.html AE模板下载 <br>
+https://www.fontstore.com/  FONT网站动效参考<br>
+
+
+
+
+
+
+
+
+
+
+
