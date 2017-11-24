@@ -16,5 +16,193 @@ new function bar(){}; // 表达式，因为它是new表达式<br>
     // ... 所有的变量和function都在这里声明，并且作用域也只能在这个匿名闭包里<br>
     // ...但是这里的代码依然可以访问外部全局的对象<br>
 }());<br>
-(function () {/* 内部代码 */})();<br>
-有括号，就是创建一个函数表达式，也就是`自执行`，<br>
+(function () {/* 内部代码 */})();   
+有括号，就是创建一个函数表达式，也就是`自执行`   
+
+### 《javascript高级程序设计》笔记：变量对象与预解析
+
+执行流在执行环境中的执行过程（执行环境的生命周期）：  
+
+* 建立arguments对象。检查当前上下文中的参数，建立该对象下的属性与属性值。  
+  
+* 检查当前上下文的函数声明，也就是使用function关键字声明的函数。在变量对象中以函数名建立一个属性，属性值为指向该函数所在内存地址的引用。`如果函数名的属性已经存在，那么该属性将会被新的引用所覆盖`。  
+  
+* 检查当前上下文中的变量声明，每找到一个变量声明，就在变量对象中以变量名建立一个属性，属性值为undefined。`如果该变量名的属性已经存在，为了防止同名的函数被修改为undefined，则会直接跳过，原属性值不会被修改`。   
+  
+总之：`function声明会比var声明优先级更高一点`   
+
+下面通过具体的例子来看变量对象：
+```
+function test(){
+   console.log(a);
+   console.log(foo());
+   
+   var a= 1;
+   function foo(){
+      return 2;
+   }
+}
+test();
+```
+当执行到text()时会生成执行环境textEC，具体形式如下：
+```
+// 创建过程
+textEC = {
+ VO: {},             // 变量对象（variable object）
+ scopeChain: [],    // 作用域链
+ this: {}          // this指向
+}
+```
+仅针对变量对象来具体展开：
+```
+VO = {
+   argument: {},             // 传参对象
+   foo: "<foo reference>",  // 在testEC中定义的function
+   a: undefined            // 在textEC中定义的var
+}
+```
+`未进入执行阶段之前，变量对象中的属性都不能访问！但是进入执行阶段之后，变量对象转变为了活动对象，里面的属性都能被访问了，然后开始进行执行阶段的操作`
+```
+VO --> AO   // 执行阶段 Active Object
+AO = {
+   argument: {...},
+   foo: function(){return 2},
+   a: 1
+}
+```
+最后我们将变量对象创建时的VO和执行阶段的AO整合到一起就可以得到整个执行环境中代码的执行顺序：
+```
+function text(){
+   function foo(){
+     return 2;
+   }
+   var a;
+   console.log(a);      // undefined
+   console.log(foo());   // 2
+   a = 1;
+}
+text();
+```
+这个就是分步变量对象的创建和执行阶段来解读`预解析` 
+
+#### 预解析
+预解析分为 变量提升 和 函数提升  
+`变量提升`：提升的是当前变量声明，赋值还保留在原来的位置
+`函数提升`：函数声明，可以认为是把整个函数体声明了
+函数表达式方式定义函数相当于变量声明 var fn = function(){}
+
+一个简单的变量提升的例子
+```
+!function(){
+  console.log(a);
+  var a = 1;
+}()
+
+// 实际执行顺序
+!function(){
+  var a;
+  console.log(a);
+  a = 1;
+}()
+```
+技巧：
+将执行过程手动拆分成两个步骤
+1.创建阶段：也称作编译阶段，主要是变量的声明和函数的定义（找var和function）
+2.执行阶段：变量赋值和函数执行
+
+这样看预解析还是比较容易的，但是涉及到命名冲突时，又是怎样的情况呢？
+
+（1）一个函数和一个变量出现同名
+情况一：变量只声明了，但没有赋值
+```
+!function(){
+   var f;
+   function f() {};
+   console.log(f);  //f(){}
+}()
+```
+情况一：变量只声明了且赋值
+```
+!function(){
+   console.log(f);   // f(){} 
+   var f = 123;
+   function f(){};
+   console.log(f);   // 123
+}
+```
+ ` 结论：`   
+     1.一个函数和一个变量出现同名，如果是变量只声明了，但没有赋值，变量名会被忽略   
+     2.一个函数和一个变量出现同名，变量声明且赋值，赋值前值为函数，赋值后为变量的值   
+     
+（2）两个变量名出现同名
+!function(){
+   console.log(f);  // undefined
+   var f = 123;
+   var f = 456;
+   console.log()   // 456
+}()
+`结论：`
+两个变量出现同名，重复的var声明无效，会被忽略，只会起到赋值的作用，前面赋值会被后面的覆盖
+
+（3）两个函数出现同名
+```
+!function(){
+   console.log(f);             //f(){return 456}
+   function f(){return 123};
+   function f(){return 456};
+   console.log(f);             //f(){return 456}
+}
+```
+结论：
+两个函数出现同名，由于javascript中函数没有重载，前面的同名函数会被后面的覆盖
+
+（4）变量名与参数名相同  
+函数参数的本质是什么？函数参数也是变量，相当于在该函数的执行环境内最顶部声明了实参
+
+情况一：参数为变量，与变量命名冲突  
+```
+(function (a) {
+    console.log(a);  //100
+    var a = 10;
+    console.log(a);  //10
+})(100);
+// 相当于
+(funcion (a) {
+    var a = 100; 
+    var a;          // 重复声明的var没有意义，忽略
+    console.log(a); //100
+    a = 10;
+    console.log(a); //10
+})(100);
+```
+情况二：参数为函数，与变量命名冲突
+```
+(function (a) {
+    console.log(a);
+    var a = 10;
+    console.log(a)
+})(function(){return 2});
+// 相当于
+(function (a){
+   var a = function(){return2};
+      var a;   // 重复声明的var没有意义，忽略
+      console.log(a);  // function(){return 2}
+      a = 10;
+      console.log(a); // 10
+})(function(){return 2});
+```
+情况三：参数为空，与变量命名冲突
+```
+(function (a) {
+    console.log(a); // undefined
+    var a = 10;
+    console.log(a); // 10
+})();
+// 相当于
+(function (a) {
+  var a;
+    console.log(a); // undefined
+    a = 10;
+    console.log(a); // 10
+})();
+```
