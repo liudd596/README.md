@@ -1,39 +1,4 @@
-### 《javascript高级程序设计》笔记： 引用类型 Function
-**迭代方法**  EC5定义了5个迭代方法。每个方法都接收两个参数：
-- **要在每一项上运行的函数；** 
-- **（可选的）运行该函数的作用域对象--影响this的值。**   
 
-传入这些方法中的函数会接收三个参数：数组项的值(item)、该项在数组中的位置(index)、数组对象本身(array)。   
-以下是这5个迭代方法的作用：   
--every():  对数组中的每一项运行给定函数，如果该函数对每一项都返回true，则返回true。   
--some():   对数组中的每一项运行给定函数，如果该函数对任意一项都返回true，则返回true。   
--filter(): 对数组中的每一项运行给定函数，返回该函数会返回true的项组成的数组。  
--map():    对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组。  
--forEach():对数组中的每一项运行给定函数，这个方法没有返回值。  
-```javascript
-var number = [1,2,3,4,5,4,3,2,1]
-
-var everyResult = number.every(function(item, index, array){
-    return (item < 2);
-});
-alert(everyResult);   //false
-
-var someResult = number.some(function(item, index, array){
-    return (item < 2);
-});
-alert(someResult);    //true
-
-var filterResult = number.filter(function(item, index, array){
-    return (item < 2);
-});
-alert(filterResult);   // [3,4,5,4,3]
-
-var mapResult = number.map(function(item, index, array){
-    return item * 2;
-});
-alert(mapResult);      // [2,4,6,8,10,8,6,4,2]
-
-```
 ### 《javascript高级程序设计》笔记：变量对象与预解析
 
 执行流在执行环境中的执行过程（执行环境的生命周期）：  
