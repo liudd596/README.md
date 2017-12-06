@@ -12,7 +12,7 @@
 总之：`function声明会比var声明优先级更高一点 ; 在函数体内，函数的参数a的优先级高于变量a`     
 
 下面通过具体的例子来看变量对象：
-```
+```javascript
 function test(){
    console.log(a);
    console.log(foo());
@@ -25,7 +25,7 @@ function test(){
 test();
 ```
 当执行到text()时会生成执行环境textEC，具体形式如下：
-```
+```javascript
 // 创建过程
 textEC = {
  VO: {},             // 变量对象（variable object）
@@ -34,7 +34,7 @@ textEC = {
 }
 ```
 仅针对变量对象来具体展开：
-```
+```javascript
 VO = {
    argument: {},             // 传参对象
    foo: "<foo reference>",  // 在testEC中定义的function
@@ -42,7 +42,7 @@ VO = {
 }
 ```
 `未进入执行阶段之前，变量对象中的属性都不能访问！但是进入执行阶段之后，变量对象转变为了活动对象，里面的属性都能被访问了，然后开始进行执行阶段的操作`
-```
+```javascript
 VO --> AO   // 执行阶段 Active Object
 AO = {
    argument: {...},
@@ -51,7 +51,7 @@ AO = {
 }
 ```
 最后我们将变量对象创建时的VO和执行阶段的AO整合到一起就可以得到整个执行环境中代码的执行顺序：
-```
+```javascript
 function text(){
    function foo(){
      return 2;
@@ -72,7 +72,7 @@ text();
 函数表达式方式定义函数相当于变量声明 var fn = function(){}   
 
 一个简单的变量提升的例子
-```
+```javascript
 !function(){
   console.log(a);
   var a = 1;
@@ -94,7 +94,7 @@ text();
 
 （1）一个函数和一个变量出现同名
 情况一：变量只声明了，但没有赋值
-```
+```javascript
 !function(){
    var f;
    function f() {};
@@ -102,7 +102,7 @@ text();
 }()
 ```
 情况一：变量只声明了且赋值
-```
+```javascript
 !function(){
    console.log(f);   // f(){} 
    var f = 123;
@@ -115,7 +115,7 @@ text();
      2.一个函数和一个变量出现同名，变量声明且赋值，赋值前值为函数，赋值后为变量的值   
      
 （2）两个变量名出现同名   
-```
+```javascript
 !function(){
    console.log(f);  // undefined
    var f = 123;
@@ -127,7 +127,7 @@ text();
 两个变量出现同名，重复的var声明无效，会被忽略，只会起到赋值的作用，前面赋值会被后面的覆盖   
 
 （3）两个函数出现同名   
-```
+```javascript
 !function(){
    console.log(f);             //f(){return 456}
    function f(){return 123};
@@ -142,7 +142,7 @@ text();
 函数参数的本质是什么？函数参数也是变量，相当于在该函数的执行环境内最顶部声明了实参
 
 情况一：参数为变量，与变量命名冲突  
-```
+```javascript
 (function (a) {
     console.log(a);  //100
     var a = 10;
@@ -158,7 +158,7 @@ text();
 })(100);
 ```
 情况二：参数为函数，与变量命名冲突
-```
+```javascript
 (function (a) {
     console.log(a);
     var a = 10;
@@ -172,7 +172,7 @@ text();
       a = 10;
       console.log(a); // 10
 })(function(){return 2});
-```
+```javascript
 情况三：参数为空，与变量命名冲突
 ```
 (function (a) {
@@ -187,7 +187,7 @@ text();
     a = 10;
     console.log(a); // 10
 })();
-```
+```javascript
 ### 《javascript高级程序设计》笔记：原型图解   
 1. 图解原型链  
 1.1 “铁三角关系”（重点）  
