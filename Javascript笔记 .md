@@ -1,4 +1,4 @@
-## 《javascript高级程序设计》笔记
+﻿## 《javascript高级程序设计》笔记
  
 1.[《javascript高级程序设计》笔记：变量对象](https://github.com/liudd596/README.md/issues/4)   
 2.[《javascript高级程序设计》笔记：内置对象](https://github.com/liudd596/README.md/issues/3)  
@@ -7,3 +7,4 @@
 5.[《javascript高级程序设计》笔记： 引用类型 Function](https://github.com/liudd596/README.md/issues/2)   
 
 
+刘丹丹较好的很简单
